@@ -30,7 +30,7 @@ ON
 # case_sensitive
 # source_file
 SAP_1.v
-bf8a1448497c633d85c16553b58af55
+8e95118038bc8b772f7e8663468f765
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -47,6 +47,12 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
+}
+# user_parameter {
+bytes
+16
+PARAMETER_SIGNED_DEC
+DEF
 }
 # hierarchies {
 |

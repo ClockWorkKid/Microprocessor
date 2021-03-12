@@ -10,7 +10,7 @@ Register data always available on output 8 bits display
 RAM outputs data to BUS when enable_output == LOW
 */
 
-module SAP_1(address, to_bus, enable_output);
+module RAM(address, to_bus, enable_output);
   
   input [3:0] address;
   input enable_output;
@@ -19,7 +19,7 @@ module SAP_1(address, to_bus, enable_output);
   
   parameter bytes = 16;
   
-  reg [7:0] memory[bytes-1:0];	// 16X8 data storage
+  wire [7:0] memory[bytes-1:0];	// 16X8 data storage
   
   assign to_bus = enable_output? 8'bZZZZZZZZ : memory[address];
   

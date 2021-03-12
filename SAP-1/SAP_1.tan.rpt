@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for SAP_1
-Fri Mar 12 22:03:52 2021
+Fri Mar 12 23:04:11 2021
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -9,12 +9,9 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   1. Legal Notice
   2. Timing Analyzer Summary
   3. Timing Analyzer Settings
-  4. Clock Settings Summary
-  5. Parallel Compilation
-  6. tsu
-  7. tco
-  8. th
-  9. Timing Analyzer Messages
+  4. Parallel Compilation
+  5. tpd
+  6. Timing Analyzer Messages
 
 
 
@@ -37,16 +34,14 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                         ;
-+------------------------------+-------+---------------+-------------+------------------+------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From             ; To               ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+------------------+------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 5.176 ns    ; enable_load      ; register[7]~reg0 ; --         ; clock    ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 9.285 ns    ; register[5]~reg0 ; register[5]      ; clock      ; --       ; 0            ;
-; Worst-case th                ; N/A   ; None          ; 0.147 ns    ; from_BUS[6]      ; register[6]~reg0 ; --         ; clock    ; 0            ;
-; Total number of failed paths ;       ;               ;             ;                  ;                  ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+------------------+------------------+------------+----------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                               ;
++------------------------------+-------+---------------+-------------+---------------+-----------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From          ; To        ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+---------------+-----------+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 10.244 ns   ; enable_output ; to_bus[0] ; --         ; --       ; 0            ;
+; Total number of failed paths ;       ;               ;             ;               ;           ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+---------------+-----------+------------+----------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -81,15 +76,6 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+--------------------+------+----+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Settings Summary                                                                                                                                                             ;
-+-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
-; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
-+-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
-; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-+-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
-
-
 +------------------------------------------+
 ; Parallel Compilation                     ;
 +----------------------------+-------------+
@@ -107,68 +93,51 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------+
-; tsu                                                                           ;
-+-------+--------------+------------+-------------+------------------+----------+
-; Slack ; Required tsu ; Actual tsu ; From        ; To               ; To Clock ;
-+-------+--------------+------------+-------------+------------------+----------+
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[0]~reg0 ; clock    ;
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[1]~reg0 ; clock    ;
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[2]~reg0 ; clock    ;
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[3]~reg0 ; clock    ;
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[4]~reg0 ; clock    ;
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[5]~reg0 ; clock    ;
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[6]~reg0 ; clock    ;
-; N/A   ; None         ; 5.176 ns   ; enable_load ; register[7]~reg0 ; clock    ;
-; N/A   ; None         ; 4.832 ns   ; from_BUS[0] ; register[0]~reg0 ; clock    ;
-; N/A   ; None         ; 4.821 ns   ; from_BUS[3] ; register[3]~reg0 ; clock    ;
-; N/A   ; None         ; 4.727 ns   ; from_BUS[2] ; register[2]~reg0 ; clock    ;
-; N/A   ; None         ; 4.678 ns   ; from_BUS[4] ; register[4]~reg0 ; clock    ;
-; N/A   ; None         ; 4.638 ns   ; from_BUS[5] ; register[5]~reg0 ; clock    ;
-; N/A   ; None         ; 4.599 ns   ; from_BUS[1] ; register[1]~reg0 ; clock    ;
-; N/A   ; None         ; 0.127 ns   ; from_BUS[7] ; register[7]~reg0 ; clock    ;
-; N/A   ; None         ; 0.119 ns   ; from_BUS[6] ; register[6]~reg0 ; clock    ;
-+-------+--------------+------------+-------------+------------------+----------+
-
-
-+---------------------------------------------------------------------------------+
-; tco                                                                             ;
-+-------+--------------+------------+------------------+-------------+------------+
-; Slack ; Required tco ; Actual tco ; From             ; To          ; From Clock ;
-+-------+--------------+------------+------------------+-------------+------------+
-; N/A   ; None         ; 9.285 ns   ; register[5]~reg0 ; register[5] ; clock      ;
-; N/A   ; None         ; 8.867 ns   ; register[2]~reg0 ; register[2] ; clock      ;
-; N/A   ; None         ; 8.706 ns   ; register[6]~reg0 ; register[6] ; clock      ;
-; N/A   ; None         ; 8.598 ns   ; register[4]~reg0 ; register[4] ; clock      ;
-; N/A   ; None         ; 8.470 ns   ; register[3]~reg0 ; register[3] ; clock      ;
-; N/A   ; None         ; 8.020 ns   ; register[1]~reg0 ; register[1] ; clock      ;
-; N/A   ; None         ; 7.648 ns   ; register[7]~reg0 ; register[7] ; clock      ;
-; N/A   ; None         ; 7.290 ns   ; register[0]~reg0 ; register[0] ; clock      ;
-+-------+--------------+------------+------------------+-------------+------------+
-
-
-+-------------------------------------------------------------------------------------+
-; th                                                                                  ;
-+---------------+-------------+-----------+-------------+------------------+----------+
-; Minimum Slack ; Required th ; Actual th ; From        ; To               ; To Clock ;
-+---------------+-------------+-----------+-------------+------------------+----------+
-; N/A           ; None        ; 0.147 ns  ; from_BUS[6] ; register[6]~reg0 ; clock    ;
-; N/A           ; None        ; 0.139 ns  ; from_BUS[7] ; register[7]~reg0 ; clock    ;
-; N/A           ; None        ; -4.333 ns ; from_BUS[1] ; register[1]~reg0 ; clock    ;
-; N/A           ; None        ; -4.372 ns ; from_BUS[5] ; register[5]~reg0 ; clock    ;
-; N/A           ; None        ; -4.412 ns ; from_BUS[4] ; register[4]~reg0 ; clock    ;
-; N/A           ; None        ; -4.461 ns ; from_BUS[2] ; register[2]~reg0 ; clock    ;
-; N/A           ; None        ; -4.555 ns ; from_BUS[3] ; register[3]~reg0 ; clock    ;
-; N/A           ; None        ; -4.566 ns ; from_BUS[0] ; register[0]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[0]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[1]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[2]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[3]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[4]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[5]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[6]~reg0 ; clock    ;
-; N/A           ; None        ; -4.910 ns ; enable_load ; register[7]~reg0 ; clock    ;
-+---------------+-------------+-----------+-------------+------------------+----------+
++-------------------------------------------------------------------------+
+; tpd                                                                     ;
++-------+-------------------+-----------------+---------------+-----------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From          ; To        ;
++-------+-------------------+-----------------+---------------+-----------+
+; N/A   ; None              ; 10.244 ns       ; enable_output ; to_bus[3] ;
+; N/A   ; None              ; 10.244 ns       ; enable_output ; to_bus[0] ;
+; N/A   ; None              ; 9.590 ns        ; enable_output ; to_bus[1] ;
+; N/A   ; None              ; 9.580 ns        ; enable_output ; to_bus[4] ;
+; N/A   ; None              ; 9.580 ns        ; enable_output ; to_bus[2] ;
+; N/A   ; None              ; 9.578 ns        ; enable_output ; to_bus[5] ;
+; N/A   ; None              ; 9.157 ns        ; enable_output ; to_bus[6] ;
+; N/A   ; None              ; 9.147 ns        ; enable_output ; to_bus[7] ;
+; N/A   ; None              ; 7.036 ns        ; address[2]    ; to_bus[7] ;
+; N/A   ; None              ; 7.028 ns        ; address[0]    ; to_bus[7] ;
+; N/A   ; None              ; 6.858 ns        ; address[2]    ; to_bus[5] ;
+; N/A   ; None              ; 6.850 ns        ; address[0]    ; to_bus[5] ;
+; N/A   ; None              ; 6.840 ns        ; address[0]    ; to_bus[3] ;
+; N/A   ; None              ; 6.837 ns        ; address[2]    ; to_bus[0] ;
+; N/A   ; None              ; 6.834 ns        ; address[2]    ; to_bus[3] ;
+; N/A   ; None              ; 6.826 ns        ; address[0]    ; to_bus[0] ;
+; N/A   ; None              ; 6.703 ns        ; address[1]    ; to_bus[7] ;
+; N/A   ; None              ; 6.618 ns        ; address[3]    ; to_bus[7] ;
+; N/A   ; None              ; 6.555 ns        ; address[2]    ; to_bus[6] ;
+; N/A   ; None              ; 6.550 ns        ; address[0]    ; to_bus[6] ;
+; N/A   ; None              ; 6.527 ns        ; address[0]    ; to_bus[1] ;
+; N/A   ; None              ; 6.525 ns        ; address[1]    ; to_bus[5] ;
+; N/A   ; None              ; 6.524 ns        ; address[2]    ; to_bus[1] ;
+; N/A   ; None              ; 6.516 ns        ; address[0]    ; to_bus[2] ;
+; N/A   ; None              ; 6.513 ns        ; address[1]    ; to_bus[3] ;
+; N/A   ; None              ; 6.509 ns        ; address[2]    ; to_bus[2] ;
+; N/A   ; None              ; 6.503 ns        ; address[1]    ; to_bus[0] ;
+; N/A   ; None              ; 6.440 ns        ; address[3]    ; to_bus[5] ;
+; N/A   ; None              ; 6.420 ns        ; address[3]    ; to_bus[0] ;
+; N/A   ; None              ; 6.416 ns        ; address[3]    ; to_bus[3] ;
+; N/A   ; None              ; 6.400 ns        ; address[0]    ; to_bus[4] ;
+; N/A   ; None              ; 6.394 ns        ; address[2]    ; to_bus[4] ;
+; N/A   ; None              ; 6.225 ns        ; address[1]    ; to_bus[6] ;
+; N/A   ; None              ; 6.204 ns        ; address[1]    ; to_bus[1] ;
+; N/A   ; None              ; 6.188 ns        ; address[1]    ; to_bus[2] ;
+; N/A   ; None              ; 6.137 ns        ; address[3]    ; to_bus[6] ;
+; N/A   ; None              ; 6.104 ns        ; address[3]    ; to_bus[1] ;
+; N/A   ; None              ; 6.088 ns        ; address[3]    ; to_bus[2] ;
+; N/A   ; None              ; 5.972 ns        ; address[3]    ; to_bus[4] ;
++-------+-------------------+-----------------+---------------+-----------+
 
 
 +--------------------------+
@@ -177,56 +146,18 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri Mar 12 22:03:51 2021
+    Info: Processing started: Fri Mar 12 23:04:11 2021
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off SAP_1 -c SAP_1 --timing_analysis_only
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
-Warning: Found pins functioning as undefined clocks and/or memory enables
-    Info: Assuming node "clock" is an undefined clock
-Info: No valid register-to-register data paths exist for clock "clock"
-Info: tsu for register "register[0]~reg0" (data pin = "enable_load", clock pin = "clock") is 5.176 ns
-    Info: + Longest pin to register delay is 7.963 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.965 ns) = 0.965 ns; Loc. = PIN_74; Fanout = 8; PIN Node = 'enable_load'
-        Info: 2: + IC(6.143 ns) + CELL(0.855 ns) = 7.963 ns; Loc. = LCFF_X20_Y4_N9; Fanout = 1; REG Node = 'register[0]~reg0'
-        Info: Total cell delay = 1.820 ns ( 22.86 % )
-        Info: Total interconnect delay = 6.143 ns ( 77.14 % )
-    Info: + Micro setup delay of destination is -0.040 ns
-    Info: - Shortest clock path from clock "clock" to destination register is 2.747 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'clock'
-        Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 8; COMB Node = 'clock~clkctrl'
-        Info: 3: + IC(0.838 ns) + CELL(0.666 ns) = 2.747 ns; Loc. = LCFF_X20_Y4_N9; Fanout = 1; REG Node = 'register[0]~reg0'
-        Info: Total cell delay = 1.766 ns ( 64.29 % )
-        Info: Total interconnect delay = 0.981 ns ( 35.71 % )
-Info: tco from clock "clock" to destination pin "register[5]" through register "register[5]~reg0" is 9.285 ns
-    Info: + Longest clock path from clock "clock" to source register is 2.747 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'clock'
-        Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 8; COMB Node = 'clock~clkctrl'
-        Info: 3: + IC(0.838 ns) + CELL(0.666 ns) = 2.747 ns; Loc. = LCFF_X20_Y4_N11; Fanout = 1; REG Node = 'register[5]~reg0'
-        Info: Total cell delay = 1.766 ns ( 64.29 % )
-        Info: Total interconnect delay = 0.981 ns ( 35.71 % )
-    Info: + Micro clock to output delay of source is 0.304 ns
-    Info: + Longest register to pin delay is 6.234 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X20_Y4_N11; Fanout = 1; REG Node = 'register[5]~reg0'
-        Info: 2: + IC(3.178 ns) + CELL(3.056 ns) = 6.234 ns; Loc. = PIN_9; Fanout = 0; PIN Node = 'register[5]'
-        Info: Total cell delay = 3.056 ns ( 49.02 % )
-        Info: Total interconnect delay = 3.178 ns ( 50.98 % )
-Info: th for register "register[6]~reg0" (data pin = "from_BUS[6]", clock pin = "clock") is 0.147 ns
-    Info: + Longest clock path from clock "clock" to destination register is 2.747 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'clock'
-        Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 8; COMB Node = 'clock~clkctrl'
-        Info: 3: + IC(0.838 ns) + CELL(0.666 ns) = 2.747 ns; Loc. = LCFF_X20_Y4_N13; Fanout = 1; REG Node = 'register[6]~reg0'
-        Info: Total cell delay = 1.766 ns ( 64.29 % )
-        Info: Total interconnect delay = 0.981 ns ( 35.71 % )
-    Info: + Micro hold delay of destination is 0.306 ns
-    Info: - Shortest pin to register delay is 2.906 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.110 ns) = 1.110 ns; Loc. = PIN_88; Fanout = 1; PIN Node = 'from_BUS[6]'
-        Info: 2: + IC(1.482 ns) + CELL(0.206 ns) = 2.798 ns; Loc. = LCCOMB_X20_Y4_N12; Fanout = 1; COMB Node = 'register[6]~reg0feeder'
-        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 2.906 ns; Loc. = LCFF_X20_Y4_N13; Fanout = 1; REG Node = 'register[6]~reg0'
-        Info: Total cell delay = 1.424 ns ( 49.00 % )
-        Info: Total interconnect delay = 1.482 ns ( 51.00 % )
-Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+Info: Longest tpd from source pin "enable_output" to destination pin "to_bus[3]" is 10.244 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.945 ns) = 0.945 ns; Loc. = PIN_31; Fanout = 8; PIN Node = 'enable_output'
+    Info: 2: + IC(6.204 ns) + CELL(3.095 ns) = 10.244 ns; Loc. = PIN_8; Fanout = 0; PIN Node = 'to_bus[3]'
+    Info: Total cell delay = 4.040 ns ( 39.44 % )
+    Info: Total interconnect delay = 6.204 ns ( 60.56 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 196 megabytes
-    Info: Processing ended: Fri Mar 12 22:03:52 2021
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Fri Mar 12 23:04:11 2021
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

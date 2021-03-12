@@ -2,34 +2,14 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
-Type           : Worst-case tsu
+Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
-Actual Time    : 5.176 ns
-From           : enable_load
-To             : register[7]~reg0
+Actual Time    : 10.244 ns
+From           : enable_output
+To             : to_bus[0]
 From Clock     : --
-To Clock       : clock
-Failed Paths   : 0
-
-Type           : Worst-case tco
-Slack          : N/A
-Required Time  : None
-Actual Time    : 9.285 ns
-From           : register[5]~reg0
-To             : register[5]
-From Clock     : clock
 To Clock       : --
-Failed Paths   : 0
-
-Type           : Worst-case th
-Slack          : N/A
-Required Time  : None
-Actual Time    : 0.147 ns
-From           : from_BUS[6]
-To             : register[6]~reg0
-From Clock     : --
-To Clock       : clock
 Failed Paths   : 0
 
 Type           : Total number of failed paths
