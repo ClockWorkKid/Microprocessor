@@ -57,3 +57,4 @@ set_global_assignment -name VERILOG_FILE ALU.v
 set_global_assignment -name VERILOG_FILE Register_output.v
 set_global_assignment -name VERILOG_FILE RAM.v
 set_global_assignment -name VERILOG_FILE MAR.v
+set_global_assignment -name VERILOG_FILE Program_Counter.v

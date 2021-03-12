@@ -1,5 +1,5 @@
 Assembler report for SAP_1
-Sat Mar 13 01:21:41 2021
+Sat Mar 13 01:42:28 2021
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Mar 13 01:21:41 2021 ;
+; Assembler Status      ; Successful - Sat Mar 13 01:42:28 2021 ;
 ; Revision Name         ; SAP_1                                 ;
 ; Top-level Entity Name ; SAP_1                                 ;
 ; Family                ; Cyclone II                            ;
@@ -93,7 +93,7 @@ applicable agreement for further details.
 +----------------+--------------------------------------------------------------------+
 ; Device         ; EP2C5T144C8                                                        ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                         ;
-; Checksum       ; 0x00073A64                                                         ;
+; Checksum       ; 0x000736F4                                                         ;
 +----------------+--------------------------------------------------------------------+
 
 
@@ -104,7 +104,7 @@ applicable agreement for further details.
 +--------------------+----------------------------------------------------------------+
 ; Device             ; EPCS4                                                          ;
 ; JTAG usercode      ; 0x00000000                                                     ;
-; Checksum           ; 0x07530D7F                                                     ;
+; Checksum           ; 0x07531465                                                     ;
 ; Compression Ratio  ; 3                                                              ;
 +--------------------+----------------------------------------------------------------+
 
@@ -115,14 +115,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sat Mar 13 01:21:39 2021
+    Info: Processing started: Sat Mar 13 01:42:26 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SAP_1 -c SAP_1
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 218 megabytes
-    Info: Processing ended: Sat Mar 13 01:21:41 2021
+    Info: Processing ended: Sat Mar 13 01:42:28 2021
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

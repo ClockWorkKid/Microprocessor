@@ -1,4 +1,4 @@
-// SAP-1 Memory Access Register
+// SAP-1 Program Counter
 
 /*
 Register loads lower 4 bits from bus when enable_load == LOW
@@ -6,18 +6,21 @@ Register loads lower 4 bits from bus when enable_load == LOW
 Register data always available on RAM address 4 bits 
 */
 
-module MAR(from_BUS, register, enable_load, clock);
+module SAP_1(clock, clear, count, enable_output, to_BUS);
   
-  input enable_load, clock;
-  input [3:0] from_BUS;
+  input clock, clear, count, enable_output;
+  output [3:0] to_BUS;
   
-  output reg[3:0] register;
+  reg[3:0] counter;
   
-  always @(posedge clock) begin
+  assign to_BUS = enable_output ? counter : 4'bZZZZ;
+  
+  always @(negedge clock) begin
     
-    if (enable_load == 1'b0)
-      register <= from_BUS;
-
+    if (clear == 1'b0)
+		counter <= 4'b0000;
+    else if (count == 1'b1)
+		counter <= counter + 4'b0001;
   end
     
 endmodule

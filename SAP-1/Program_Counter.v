@@ -10,7 +10,7 @@ Counter outputs program address to bus when enable_output == 1
 Register data always available on RAM address 4 bits 
 */
 
-module SAP_1(clock, clear, count, enable_output, to_BUS);
+module Program_Counter(clock, clear, count, enable_output, to_BUS);
   
   input clock, clear, count, enable_output;
   output [3:0] to_BUS;

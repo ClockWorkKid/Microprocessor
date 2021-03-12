@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SAP_1
-Sat Mar 13 01:21:34 2021
+Sat Mar 13 01:42:22 2021
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -39,16 +39,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 13 01:21:34 2021    ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 13 01:42:22 2021    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; SAP_1                                    ;
 ; Top-level Entity Name              ; SAP_1                                    ;
 ; Family                             ; Cyclone II                               ;
 ; Total logic elements               ; 4                                        ;
-;     Total combinational functions  ; 0                                        ;
+;     Total combinational functions  ; 4                                        ;
 ;     Dedicated logic registers      ; 4                                        ;
 ; Total registers                    ; 4                                        ;
-; Total pins                         ; 10                                       ;
+; Total pins                         ; 8                                        ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
@@ -140,33 +140,33 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+---------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 4     ;
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 4     ;
-;     -- Dedicated logic registers            ; 4     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 10    ;
-; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 4     ;
-; Total fan-out                               ; 16    ;
-; Average fan-out                             ; 1.14  ;
-+---------------------------------------------+-------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 4             ;
+;                                             ;               ;
+; Total combinational functions               ; 4             ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 0             ;
+;     -- 3 input functions                    ; 1             ;
+;     -- <=2 input functions                  ; 3             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 1             ;
+;     -- arithmetic mode                      ; 3             ;
+;                                             ;               ;
+; Total registers                             ; 4             ;
+;     -- Dedicated logic registers            ; 4             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 8             ;
+; Maximum fan-out node                        ; enable_output ;
+; Maximum fan-out                             ; 4             ;
+; Total fan-out                               ; 28            ;
+; Average fan-out                             ; 1.75          ;
++---------------------------------------------+---------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -174,7 +174,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |SAP_1                     ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |SAP_1              ; work         ;
+; |SAP_1                     ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |SAP_1              ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -185,11 +185,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 4     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Clear  ; 4     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -200,7 +200,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sat Mar 13 01:21:33 2021
+    Info: Processing started: Sat Mar 13 01:42:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SAP_1 -c SAP_1
 Info: Found 1 design units, including 1 entities, in source file Accumulator.v
     Info: Found entity 1: Accumulator
@@ -216,14 +216,16 @@ Info: Found 1 design units, including 1 entities, in source file RAM.v
     Info: Found entity 1: RAM
 Info: Found 1 design units, including 1 entities, in source file MAR.v
     Info: Found entity 1: MAR
+Info: Found 1 design units, including 1 entities, in source file Program_Counter.v
+    Info: Found entity 1: Program_Counter
 Info: Elaborating entity "SAP_1" for the top level hierarchy
-Info: Implemented 14 device resources after synthesis - the final resource count might be different
-    Info: Implemented 6 input pins
+Info: Implemented 12 device resources after synthesis - the final resource count might be different
+    Info: Implemented 4 input pins
     Info: Implemented 4 output pins
     Info: Implemented 4 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 234 megabytes
-    Info: Processing ended: Sat Mar 13 01:21:34 2021
+    Info: Peak virtual memory: 232 megabytes
+    Info: Processing ended: Sat Mar 13 01:42:22 2021
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
