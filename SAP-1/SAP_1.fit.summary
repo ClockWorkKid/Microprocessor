@@ -1,15 +1,15 @@
-Fitter Status : Successful - Fri Mar 12 20:49:38 2021
+Fitter Status : Successful - Fri Mar 12 21:16:20 2021
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : SAP_1
 Top-level Entity Name : SAP_1
 Family : Cyclone II
 Device : EP2C5T144C8
 Timing Models : Final
-Total logic elements : 8 / 4,608 ( < 1 % )
-    Total combinational functions : 0 / 4,608 ( 0 % )
-    Dedicated logic registers : 8 / 4,608 ( < 1 % )
-Total registers : 8
-Total pins : 18 / 89 ( 20 % )
+Total logic elements : 17 / 4,608 ( < 1 % )
+    Total combinational functions : 17 / 4,608 ( < 1 % )
+    Dedicated logic registers : 0 / 4,608 ( 0 % )
+Total registers : 0
+Total pins : 26 / 89 ( 29 % )
 Total virtual pins : 0
 Total memory bits : 0 / 119,808 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )

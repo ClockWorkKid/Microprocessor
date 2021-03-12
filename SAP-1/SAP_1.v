@@ -1,15 +1,12 @@
-module SAP_1(from_BUS, register, enable_load, clock);
+module SAP_1(A, B, operation, enable_output, S);
   
-  input enable_load, clock;
-  input [7:0] from_BUS;
+  input [7:0] A, B;
+  input operation, enable_output;
   
-  output reg[7:0] register;
+  output [7:0] S;
+  wire [7:0] temp;
   
-  always @(posedge clock) begin
-    
-    if (enable_load == 1'b0)
-      register <= from_BUS;
+  assign temp = operation ? A - B : A + B;
+  assign S = enable_output ? temp : 8'bZZZZZZZZ;
 
-  end
-    
 endmodule
