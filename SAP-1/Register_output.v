@@ -6,7 +6,7 @@ Register loads 8 bits from bus using the from_BUS bits when enable_load == LOW
 Register data always available on output 8 bits display 
 */
 
-module SAP_1(from_BUS, register, enable_load, clock);
+module Register_output(from_BUS, register, enable_load, clock);
   
   input enable_load, clock;
   input [7:0] from_BUS;
