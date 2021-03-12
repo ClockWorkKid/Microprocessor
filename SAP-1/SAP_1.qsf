@@ -55,3 +55,5 @@ set_global_assignment -name VERILOG_FILE SAP_1.v
 set_global_assignment -name VERILOG_FILE Register_B.v
 set_global_assignment -name VERILOG_FILE ALU.v
 set_global_assignment -name VERILOG_FILE Register_output.v
+set_global_assignment -name VERILOG_FILE RAM.v
+set_global_assignment -name VERILOG_FILE MAR.v
