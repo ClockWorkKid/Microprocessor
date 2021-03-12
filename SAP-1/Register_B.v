@@ -1,4 +1,4 @@
-module SAP_1(from_BUS, register, enable_load, clock);
+module register_B(from_BUS, register, enable_load, clock);
   
   input enable_load, clock;
   input [7:0] from_BUS;

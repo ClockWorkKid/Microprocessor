@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 5.358 ns
-From           : from_BUS[0]
-To             : register[0]~reg0
+Actual Time    : 5.176 ns
+From           : enable_load
+To             : register[7]~reg0
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -15,29 +15,19 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 9.518 ns
+Actual Time    : 9.285 ns
 From           : register[5]~reg0
-To             : to_BUS[5]
+To             : register[5]
 From Clock     : clock
-To Clock       : --
-Failed Paths   : 0
-
-Type           : Worst-case tpd
-Slack          : N/A
-Required Time  : None
-Actual Time    : 11.160 ns
-From           : enable_output
-To             : to_BUS[4]
-From Clock     : --
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 0.067 ns
-From           : from_BUS[4]
-To             : register[4]~reg0
+Actual Time    : 0.147 ns
+From           : from_BUS[6]
+To             : register[6]~reg0
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0

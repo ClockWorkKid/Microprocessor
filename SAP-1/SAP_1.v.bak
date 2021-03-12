@@ -1,13 +1,3 @@
-// SAP-1 Accumulator Design
-
-/*
-Accumulator loads 8 bits from bus using the input_from_BUS bits when enable_load == LOW
-
-Accumulator outputs 8 bits to bus using the output_to_BUS bits when enable_output == HIGH
-
-Accumulator data always available on output_to_ALU 8 bits 
-*/
-
 module SAP_1(from_BUS, to_BUS, register, enable_load, enable_output, clock);
   
   input enable_load, enable_output, clock;

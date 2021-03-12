@@ -1,5 +1,5 @@
 Flow report for SAP_1
-Fri Mar 12 19:11:09 2021
+Fri Mar 12 20:49:43 2021
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Fri Mar 12 19:11:09 2021    ;
+; Flow Status                        ; Successful - Fri Mar 12 20:49:43 2021    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; SAP_1                                    ;
 ; Top-level Entity Name              ; SAP_1                                    ;
@@ -50,7 +50,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 0 / 4,608 ( 0 % )                        ;
 ;     Dedicated logic registers      ; 8 / 4,608 ( < 1 % )                      ;
 ; Total registers                    ; 8                                        ;
-; Total pins                         ; 27 / 89 ( 30 % )                         ;
+; Total pins                         ; 18 / 89 ( 20 % )                         ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                      ;
 ; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                           ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/12/2021 19:11:01 ;
+; Start date & time ; 03/12/2021 20:49:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SAP_1               ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 202866741517844.161555466004044 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 202866741517844.161556057408048 ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --            ; --          ; Top            ;
@@ -90,9 +90,9 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 234 MB              ; 00:00:01                           ;
 ; Fitter                  ; 00:00:02     ; 1.0                     ; 266 MB              ; 00:00:02                           ;
-; Assembler               ; 00:00:03     ; 1.0                     ; 218 MB              ; 00:00:03                           ;
+; Assembler               ; 00:00:02     ; 1.0                     ; 218 MB              ; 00:00:03                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 179 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
+; Total                   ; 00:00:05     ; --                      ; --                  ; 00:00:06                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
