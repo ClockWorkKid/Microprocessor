@@ -14,7 +14,7 @@ Register activates on positive edge of clock
 
 */
 
-module SAP_1(clock, clear, enable_load, enable_output, from_BUS, to_BUS, to_controller);
+module instruction_register(clock, clear, enable_load, enable_output, from_BUS, to_BUS, to_controller);
   
   input clock, clear, enable_load, enable_output;
   input [7:0] from_BUS;

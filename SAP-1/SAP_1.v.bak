@@ -1,26 +1,36 @@
-// SAP-1 Program Counter
+// SAP-1 Instruction Register
 
 /*
-Register loads lower 4 bits from bus when enable_load == LOW
+Instruction Register reads an instruction from RAM when enable_load == 0
 
-Register data always available on RAM address 4 bits 
+Upper 4 bits of an instruction are always available on the output to controller sequence decoder
+Controller sequence reads those instructions as necessary
+
+Lower 4 bits are available on BUS when enable_output == 0
+
+Register resets to 0 when clear == 1
+
+Register activates on positive edge of clock
+
 */
 
-module SAP_1(clock, clear, count, enable_output, to_BUS);
+module SAP_1(clock, clear, enable_load, enable_output, from_BUS, to_BUS, to_controller);
   
-  input clock, clear, count, enable_output;
-  output [3:0] to_BUS;
+  input clock, clear, enable_load, enable_output;
+  input [7:0] from_BUS;
+  output [3:0] to_BUS, to controller;
   
-  reg[3:0] counter;
+  reg[7:0] instructions;
   
-  assign to_BUS = enable_output ? counter : 4'bZZZZ;
+  assign to_controller = instructions[7:4];
+  assign to_BUS = enable_output ? 4'bZZZZ : instructions[3:0];
   
-  always @(negedge clock) begin
+  always @(posedge clock) begin
     
-    if (clear == 1'b0)
-		counter <= 4'b0000;
-    else if (count == 1'b1)
-		counter <= counter + 4'b0001;
+    if (clear == 1'b1)
+		instructions <= 8'b00000000;
+    else if (enable_load == 1'b0)
+		instructions <= from_BUS;
   end
     
 endmodule
