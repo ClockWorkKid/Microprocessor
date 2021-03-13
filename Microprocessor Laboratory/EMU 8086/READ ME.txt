@@ -1,0 +1,21 @@
+*************************
+          EMU8086
+*************************
+Emu8086 is a Microprocessor Emulator
+with integrated 8086 Assembler
+
+*************************
+      Instructions
+*************************
+
+1)Install emu8086
+2)Enter the following combination below:
+
+
+name:ISHAAN,glaitm
+code:27R3VDEFYFX4N0VC3FRTQZX
+
+*************************
+Have a nice day!
+Please leave a comment and seed.
+Thanks! :)
