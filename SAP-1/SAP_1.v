@@ -64,36 +64,69 @@ module SAP_1(instruction, clock, clock_inv, clear, clear_inv, control_word);
     case (ring_counter)
 	  // CON == [Cp Ep Lm' Ce'   Li' Ei' La' Ea   Su Eu Lb' Lo']
     
-      // T1 Address State //
+      // T1 Address State // 1st step of fetch cycle
+      6'b000001  : control_word <= 12'b010111100011;
       // Program counter address is transferred to (Ep)
       // Memory address register (Lm')
-      6'b000001  : control_word <= 12'b010111100011;
       
-      // T2 Increment State //
-      // Program counter is set to increment (Cp)
       6'b000010  : control_word <= 12'b101111100011;
+      // T2 Increment State // 2nd step of fetch cycle
+      // Program counter is set to increment (Cp)
       
-      // T3 Memory State //
+      // T3 Memory State // 3rd step of fetch cycle
+      6'b000100  : control_word <= 12'b001001100011;
       // RAM instruction is transferred to (Ce')
       // Instruction register (Li')
-      6'b000100  : control_word <= 12'b001001100011;
       
-      // T4 State //
+      // T4 State // 1st step of execution cycle
       6'b001000  : begin
-      
+		if (instruction == 4'b0000) // LDA routine
+			control_word <= 12'b000110100011; // Lm' and Ei' active (low)
+		else if (instruction == 4'b0001) //	ADD routine
+			control_word <= 12'b000110100011; // Lm' and Ei' active (low)
+		else if (instruction == 4'b0010) //	SUB routine
+			control_word <= 12'b000110100011; // Lm' and Ei' active (low)
+		else if (instruction == 4'b1110) // OUT routine
+			control_word <= 12'b001111110010; // Ea and Lo' active
+		else if (instruction == 4'b1111) // HLT routine (NOT YET IMPLEMENTED)
+			control_word <= 12'b001111100011; // NOP
+		else
+			control_word <= 12'b001111100011; // NOP
       end
       
-      // T5 State //
+      // T5 State // 2nd step of execution cycle
       6'b010000  : begin
-      
+		if (instruction == 4'b0000) // LDA routine
+			control_word <= 12'b001011000011; // Ce' and La' active (low)
+		else if (instruction == 4'b0001) //	ADD routine
+			control_word <= 12'b001011100001; // Ce' and Lb' active (low)
+		else if (instruction == 4'b0010) //	SUB routine
+			control_word <= 12'b001011100001; // Ce' and Lb' active (low)
+		else if (instruction == 4'b1110) // OUT routine
+			control_word <= 12'b001111100011; // NOP
+		else if (instruction == 4'b1111) // HLT routine (NOT YET IMPLEMENTED)
+			control_word <= 12'b001111100011; // NOP
+		else
+			control_word <= 12'b001111100011; // NOP
       end
       
-      // T6 State //
+      // T6 State // 3rd step of execution cycle
       6'b100000  : begin
-      
+		if (instruction == 4'b0000) // LDA routine
+			control_word <= 12'b001111100011; // NOP
+		else if (instruction == 4'b0001) //	ADD routine
+			control_word <= 12'b000110000111; // Eu and La' active
+		else if (instruction == 4'b0010) //	SUB routine
+			control_word <= 12'b000110001111; // Eu, Su and La' active
+		else if (instruction == 4'b1110) // OUT routine
+			control_word <= 12'b001111100011; // NOP
+		else if (instruction == 4'b1111) // HLT routine (NOT YET IMPLEMENTED)
+			control_word <= 12'b001111100011; // NOP
+		else
+			control_word <= 12'b001111100011; // NOP	
       end 
       
-      default : control_word <= 12'b001111100011;
+      default : control_word <= 12'b001111100011; // NOP
     
     endcase
   end

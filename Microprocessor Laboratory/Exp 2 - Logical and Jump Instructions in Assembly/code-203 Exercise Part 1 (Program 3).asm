@@ -2,11 +2,11 @@ CODE SEGMENT
     
     ASSUME CS:CODE, DS:CODE
       
-    MOV AX, 7027H
+    MOV AX, 1027H
     MOV BX, 5A27H
     MOV CX, 54A5H
     
-    OR  AX, BX     ; AX = AX & BX
+    OR  AX, BX     ; AX = AX | BX
     
     XOR AX, CX     ; AX = AX ^ CX
     

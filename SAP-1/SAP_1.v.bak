@@ -78,7 +78,23 @@ module SAP_1(instruction, clock, clock_inv, clear, clear_inv, control_word);
       // Instruction register (Li')
       6'b000100  : control_word <= 12'b001001100011;
       
+      // T4 State //
+      6'b001000  : begin
+      
+      end
+      
+      // T5 State //
+      6'b010000  : begin
+      
+      end
+      
+      // T6 State //
+      6'b100000  : begin
+      
+      end 
+      
       default : control_word <= 12'b001111100011;
+    
     endcase
   end
     

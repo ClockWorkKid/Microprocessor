@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SAP_1
-Sat Mar 13 09:57:10 2021
+Mon Mar 15 16:43:43 2021
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -14,7 +14,8 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   6. Analysis & Synthesis Resource Utilization by Entity
   7. General Register Statistics
   8. Multiplexer Restructuring Statistics (Restructuring Performed)
-  9. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |SAP_1
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -40,15 +41,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 13 09:57:10 2021    ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 15 16:43:43 2021    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; SAP_1                                    ;
 ; Top-level Entity Name              ; SAP_1                                    ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 9                                        ;
-;     Total combinational functions  ; 9                                        ;
-;     Dedicated logic registers      ; 8                                        ;
-; Total registers                    ; 8                                        ;
+; Total logic elements               ; 36                                       ;
+;     Total combinational functions  ; 31                                       ;
+;     Dedicated logic registers      ; 19                                       ;
+; Total registers                    ; 19                                       ;
 ; Total pins                         ; 20                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
@@ -146,27 +147,27 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 9     ;
+; Estimated Total logic elements              ; 36    ;
 ;                                             ;       ;
-; Total combinational functions               ; 9     ;
+; Total combinational functions               ; 31    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 9     ;
+;     -- 4 input functions                    ; 22    ;
+;     -- 3 input functions                    ; 5     ;
+;     -- <=2 input functions                  ; 4     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 9     ;
+;     -- normal mode                          ; 31    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 8     ;
-;     -- Dedicated logic registers            ; 8     ;
+; Total registers                             ; 19    ;
+;     -- Dedicated logic registers            ; 19    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 20    ;
-; Maximum fan-out node                        ; clear ;
-; Maximum fan-out                             ; 9     ;
-; Total fan-out                               ; 54    ;
-; Average fan-out                             ; 1.46  ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 20    ;
+; Total fan-out                               ; 163   ;
+; Average fan-out                             ; 2.33  ;
 +---------------------------------------------+-------+
 
 
@@ -175,7 +176,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |SAP_1                     ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |SAP_1              ; work         ;
+; |SAP_1                     ; 31 (31)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |SAP_1              ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -185,24 +186,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8     ;
+; Total registers                              ; 19    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SAP_1|instructions[4]     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |SAP_1|instructions[0]     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |SAP_1|ring_counter[5]      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |SAP_1|control_word[2]~reg0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |SAP_1|control_word[0]~reg0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |SAP_1 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; Cp             ; 11    ; Signed Integer                               ;
+; Ep             ; 10    ; Signed Integer                               ;
+; Lm             ; 9     ; Signed Integer                               ;
+; Ce             ; 8     ; Signed Integer                               ;
+; Li             ; 7     ; Signed Integer                               ;
+; Ei             ; 6     ; Signed Integer                               ;
+; La             ; 5     ; Signed Integer                               ;
+; Ea             ; 4     ; Signed Integer                               ;
+; Su             ; 3     ; Signed Integer                               ;
+; Eu             ; 2     ; Signed Integer                               ;
+; Lb             ; 1     ; Signed Integer                               ;
+; Lo             ; 0     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -211,7 +234,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sat Mar 13 09:57:09 2021
+    Info: Processing started: Mon Mar 15 16:43:41 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SAP_1 -c SAP_1
 Info: Found 1 design units, including 1 entities, in source file Accumulator.v
     Info: Found entity 1: Accumulator
@@ -229,15 +252,19 @@ Info: Found 1 design units, including 1 entities, in source file MAR.v
     Info: Found entity 1: MAR
 Info: Found 1 design units, including 1 entities, in source file Program_Counter.v
     Info: Found entity 1: Program_Counter
+Info: Found 1 design units, including 1 entities, in source file instruction_register.v
+    Info: Found entity 1: instruction_register
 Info: Elaborating entity "SAP_1" for the top level hierarchy
-Info: Implemented 29 device resources after synthesis - the final resource count might be different
-    Info: Implemented 12 input pins
-    Info: Implemented 8 output pins
-    Info: Implemented 9 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+Warning (10230): Verilog HDL assignment warning at SAP_1.v(57): truncated value with size 32 to match size of target (6)
+Info (10264): Verilog HDL Case Statement information at SAP_1.v(64): all case item expressions in this case statement are onehot
+Info: Implemented 57 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 15 output pins
+    Info: Implemented 37 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 234 megabytes
-    Info: Processing ended: Sat Mar 13 09:57:10 2021
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Mon Mar 15 16:43:43 2021
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
