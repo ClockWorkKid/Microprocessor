@@ -5,19 +5,19 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 8.761 ns
-From           : prog_add[0]
-To             : DATA_MEM~24
+Actual Time    : 13.214 ns
+From           : data_in[3]
+To             : ZF
 From Clock     : --
-To Clock       : prog_clk
+To Clock       : osc_clock
 Failed Paths   : 0
 
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 12.787 ns
-From           : INS[0]
-To             : data_out[1]
+Actual Time    : 8.686 ns
+From           : data_out[0]~reg0
+To             : data_out[0]
 From Clock     : osc_clock
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 0.028 ns
-From           : prog_in[6]
-To             : PROG_MEM[4][6]
+Actual Time    : 0.493 ns
+From           : prog_in[5]
+To             : PROG_MEM[6][5]
 From Clock     : --
 To Clock       : prog_clk
 Failed Paths   : 0
@@ -35,7 +35,7 @@ Failed Paths   : 0
 Type           : Clock Setup: 'osc_clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 59.30 MHz ( period = 16.862 ns )
+Actual Time    : 57.53 MHz ( period = 17.382 ns )
 From           : ADD[3]
 To             : ZF
 From Clock     : osc_clock

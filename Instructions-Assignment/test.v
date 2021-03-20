@@ -1,20 +1,26 @@
-// ****************************** Testbench Code ****************************** //
-
-module test;
+module test();
           
-	reg osc_clock;			
-	reg reset;					
+	reg osc_clock = 0;			
+	reg reset = 1;					
 	reg [3:0] data_in;			// input to COM		
 
-	reg prog_clock;			
-	reg [7:0] prog_port;		// programming port used to load instructions
+    wire prog_clk;
+  	reg load_program = 0;
+	reg [7:0] prog_in;			// programming port used to load instructions
 	reg [3:0] prog_add;			// programming address
 	
 	wire [3:0] data_out;		// output from COM
 	
 	reg [7:0] PROG_MEM[15:0];		// instruction memory
     reg [3:0] DATA_MEM[15:0];		// data memory
-
+	
+  	assign prog_clk = load_program;
+  
+	computer COM(data_in, data_out, osc_clock, reset, prog_in, prog_clk, prog_add);
+  
+    integer counter;
+  	integer clk;
+	
 	// *************** ASSEMBLY CODE TO MACHINE LANGUAGE *************** //
 
 	parameter NONE = 4'b0000;
@@ -35,7 +41,6 @@ module test;
 	parameter RET		= 4'd13;
 	parameter AND_A_ADD	= 4'd14;
 	parameter HLT		= 4'd15;
-    
   
 	initial begin
 		// ------------- INSTRUCTIONS ------------- //
@@ -80,5 +85,26 @@ module test;
 		DATA_MEM[14] = 4'd0;
 		DATA_MEM[15] = 4'd0;
 	end
-   
+
+  
+  initial begin							// program the computer
+    $dumpfile("dump.vcd");
+    $dumpvars;
+    
+    for (counter = 0; counter < 16; counter = counter+1) begin
+      # 1 load_program = 0;
+      data_in = DATA_MEM[counter];
+      prog_in = PROG_MEM[counter];
+      prog_add = counter;
+      # 1 load_program = 1;
+    end
+    
+    # 1 reset = 0;
+
+    # 32 $finish;
+  
+  end
+  
+  always # 1 osc_clock = !osc_clock;		// clock input to computer
+
 endmodule

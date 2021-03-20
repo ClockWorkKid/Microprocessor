@@ -1,5 +1,5 @@
 Analysis & Synthesis report for computer
-Sun Mar 21 01:49:14 2021
+Sun Mar 21 03:53:08 2021
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 21 01:49:14 2021    ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 21 03:53:08 2021    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; computer                                 ;
 ; Top-level Entity Name              ; computer                                 ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 565                                      ;
-;     Total combinational functions  ; 313                                      ;
-;     Dedicated logic registers      ; 283                                      ;
-; Total registers                    ; 283                                      ;
+; Total logic elements               ; 578                                      ;
+;     Total combinational functions  ; 322                                      ;
+;     Dedicated logic registers      ; 290                                      ;
+; Total registers                    ; 290                                      ;
 ; Total pins                         ; 23                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
@@ -65,6 +65,9 @@ applicable agreement for further details.
 ; Device                                                         ; EP2C5T144C8        ;                    ;
 ; Top-level entity name                                          ; computer           ; computer           ;
 ; Family name                                                    ; Cyclone II         ; Stratix II         ;
+; Type of Retiming Performed During Resynthesis                  ; Full               ;                    ;
+; Resynthesis Optimization Effort                                ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                       ; Normal             ;                    ;
 ; Use Generated Physical Constraints File                        ; Off                ;                    ;
 ; Use smart compilation                                          ; Off                ; Off                ;
 ; Restructure Multiplexers                                       ; Auto               ; Auto               ;
@@ -146,26 +149,26 @@ applicable agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 565      ;
+; Estimated Total logic elements              ; 578      ;
 ;                                             ;          ;
-; Total combinational functions               ; 313      ;
+; Total combinational functions               ; 322      ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 262      ;
-;     -- 3 input functions                    ; 38       ;
-;     -- <=2 input functions                  ; 13       ;
+;     -- 4 input functions                    ; 274      ;
+;     -- 3 input functions                    ; 25       ;
+;     -- <=2 input functions                  ; 23       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 307      ;
+;     -- normal mode                          ; 316      ;
 ;     -- arithmetic mode                      ; 6        ;
 ;                                             ;          ;
-; Total registers                             ; 283      ;
-;     -- Dedicated logic registers            ; 283      ;
+; Total registers                             ; 290      ;
+;     -- Dedicated logic registers            ; 290      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 23       ;
 ; Maximum fan-out node                        ; prog_clk ;
 ; Maximum fan-out                             ; 192      ;
-; Total fan-out                               ; 2050     ;
+; Total fan-out                               ; 2099     ;
 ; Average fan-out                             ; 3.31     ;
 +---------------------------------------------+----------+
 
@@ -175,7 +178,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |computer                  ; 313 (313)         ; 283 (283)    ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |computer           ; work         ;
+; |computer                  ; 322 (322)         ; 290 (290)    ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |computer           ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -185,12 +188,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 283   ;
-; Number of registers using Synchronous Clear  ; 17    ;
+; Total registers                              ; 290   ;
+; Number of registers using Synchronous Clear  ; 11    ;
 ; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 263   ;
+; Number of registers using Clock Enable       ; 279   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -201,10 +204,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; 16:1               ; 8 bits    ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |computer|INS[0]           ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 6 LEs                ; 27 LEs                 ; Yes        ; |computer|SP[1]            ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |computer|B[3]             ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |computer|IP[3]            ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |computer|A[0]             ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; Yes        ; |computer|SP[1]            ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |computer|B[3]             ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |computer|IP[3]            ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; Yes        ; |computer|A[0]             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -214,29 +217,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sun Mar 21 01:49:10 2021
+    Info: Processing started: Sun Mar 21 03:53:04 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off computer -c computer
 Info: Found 1 design units, including 1 entities, in source file computer.v
     Info: Found entity 1: computer
 Info: Found 1 design units, including 1 entities, in source file test.v
     Info: Found entity 1: test
 Info: Elaborating entity "computer" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at computer.v(63): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at computer.v(100): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at computer.v(124): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at computer.v(130): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at computer.v(61): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at computer.v(96): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at computer.v(120): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at computer.v(126): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at computer.v(141): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at computer.v(145): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at computer.v(149): truncated value with size 32 to match size of target (4)
 Info: Found 2 instances of uninferred RAM logic
     Info: RAM logic "DATA_MEM" is uninferred due to inappropriate RAM size
     Info: RAM logic "STAK_MEM" is uninferred due to inappropriate RAM size
-Info: Implemented 592 device resources after synthesis - the final resource count might be different
+Info: Implemented 605 device resources after synthesis - the final resource count might be different
     Info: Implemented 19 input pins
     Info: Implemented 4 output pins
-    Info: Implemented 569 logic cells
+    Info: Implemented 582 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 235 megabytes
-    Info: Processing ended: Sun Mar 21 01:49:14 2021
+    Info: Processing ended: Sun Mar 21 03:53:08 2021
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
