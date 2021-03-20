@@ -1,5 +1,5 @@
 Assembler report for computer
-Sun Mar 21 00:47:53 2021
+Sun Mar 21 01:49:23 2021
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Mar 21 00:47:53 2021 ;
+; Assembler Status      ; Successful - Sun Mar 21 01:49:23 2021 ;
 ; Revision Name         ; computer                              ;
 ; Top-level Entity Name ; computer                              ;
 ; Family                ; Cyclone II                            ;
@@ -93,7 +93,7 @@ applicable agreement for further details.
 +----------------+-----------------------------------------------------------------------------------------+
 ; Device         ; EP2C5T144C8                                                                             ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                              ;
-; Checksum       ; 0x0008DFDD                                                                              ;
+; Checksum       ; 0x000BEA72                                                                              ;
 +----------------+-----------------------------------------------------------------------------------------+
 
 
@@ -104,8 +104,8 @@ applicable agreement for further details.
 +--------------------+-------------------------------------------------------------------------------------+
 ; Device             ; EPCS4                                                                               ;
 ; JTAG usercode      ; 0x00000000                                                                          ;
-; Checksum           ; 0x0750F59D                                                                          ;
-; Compression Ratio  ; 3                                                                                   ;
+; Checksum           ; 0x074B222A                                                                          ;
+; Compression Ratio  ; 2                                                                                   ;
 +--------------------+-------------------------------------------------------------------------------------+
 
 
@@ -115,13 +115,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sun Mar 21 00:47:50 2021
+    Info: Processing started: Sun Mar 21 01:49:20 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off computer -c computer
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 218 megabytes
-    Info: Processing ended: Sun Mar 21 00:47:53 2021
+    Info: Processing ended: Sun Mar 21 01:49:23 2021
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

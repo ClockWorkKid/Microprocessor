@@ -2,12 +2,16 @@
 // ************************* 4-bit Microprocessor design ************************* //
 // ******************************************************************************* //
 
-module computer (data_in, data_out, osc_clock, reset);
+module computer (data_in, data_out, osc_clock, reset, prog_in, prog_clk, prog_add);
           
   input osc_clock;				// external clock source
   input reset;					// zero initialize stuff
   input [3:0] data_in;			// input from some peripheral
-
+  
+  input prog_clk;				// programming clock
+  input [7:0] prog_in;			// programming port used to load instructions
+  input [3:0] prog_add;			// programming address
+  
   output [3:0] data_out;		// output to some output device
   
   reg [3:0] A, B, TMP;
@@ -24,74 +28,17 @@ module computer (data_in, data_out, osc_clock, reset);
   reg ZF;						// ZERO flag
   reg clock;					// controller clock
   
-  // *************** ASSEMBLY CODE TO MACHINE LANGUAGE *************** //
   
-  parameter nil = 4'b0000;
+  // ************ LOADING PROGRAM AND DATA INTO MEMORY *************** //
   
-  parameter ADD_A_B		= 4'd0;
-  parameter SUB_A_B		= 4'd1;
-  parameter XCHG_B_A	= 4'd2;
-  parameter IN_A		= 4'd3;
-  parameter OUT_A		= 4'd4;
-  parameter INC_A		= 4'd5;
-  parameter MOV_A_ADD	= 4'd6;
-  parameter MOV_A_BYT	= 4'd7;
-  parameter JZ_ADD		= 4'd8;
-  parameter PUSH_B		= 4'd9;
-  parameter POP_B		= 4'd10;
-  parameter RCL_B		= 4'd11;
-  parameter CALL_ADD	= 4'd12;
-  parameter RET			= 4'd13;
-  parameter AND_A_ADD	= 4'd14;
-  parameter HLT			= 4'd15;
+  always @(posedge prog_clk) begin
+
+	PROG_MEM[prog_add] = prog_in;
+	DATA_MEM[prog_add] = data_in;
+	
+  end
   
-  // ********************* SYSTEM INITIALIZATION ********************* //
-  always @(posedge reset) begin
-    
-    // ------------- INSTRUCTIONS ------------- //
-    PROG_MEM[0]  = {MOV_A_ADD	,	4'b0000 };
-    PROG_MEM[1]  = {XCHG_B_A	, 	nil		};
-    PROG_MEM[2]  = {MOV_A_ADD	,	4'b0001	};
-    PROG_MEM[3]  = {ADD_A_B		,	nil		};
-    
-    PROG_MEM[4]  = {OUT_A		, 	nil		};
-    PROG_MEM[5]  = {HLT			, 	nil		};
-    PROG_MEM[6]  = {nil			, 	nil		};
-    PROG_MEM[7]  = {nil			, 	nil		};
-    
-    PROG_MEM[8]  = {nil			, 	nil		};
-    PROG_MEM[9]  = {nil			, 	nil		};
-    PROG_MEM[10] = {nil			, 	nil		};
-    PROG_MEM[11] = {nil			, 	nil		};
-    
-    PROG_MEM[12] = {nil			, 	nil		};
-    PROG_MEM[13] = {nil			, 	nil		};
-    PROG_MEM[14] = {nil			, 	nil		};
-    PROG_MEM[15] = {nil			, 	nil		};
-    
-    // ---------------- MEMORY ---------------- //
-    DATA_MEM[0]  = 4'd5;
-    DATA_MEM[1]  = 4'd6;
-    DATA_MEM[2]  = 4'd0;
-    DATA_MEM[3]  = 4'd0;
-    
-    DATA_MEM[4]  = 4'd0;
-    DATA_MEM[5]  = 4'd0;
-    DATA_MEM[6]  = 4'd0;
-    DATA_MEM[7]  = 4'd0;
-    
-    DATA_MEM[8]  = 4'd0;
-    DATA_MEM[9]  = 4'd0;
-    DATA_MEM[10] = 4'd0;
-    DATA_MEM[11] = 4'd0;
-    
-    DATA_MEM[12] = 4'd0;
-    DATA_MEM[13] = 4'd0;
-    DATA_MEM[14] = 4'd0;
-    DATA_MEM[15] = 4'd0;
-    
-  end  
-  
+   
   // ************************ CONTROLLER CLOCK *********************** //
   always @(posedge osc_clock) begin
     if (HALT_FLAG == 0)
@@ -214,4 +161,5 @@ module computer (data_in, data_out, osc_clock, reset);
     
   end
   
+
 endmodule
