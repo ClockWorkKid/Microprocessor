@@ -1,0 +1,27 @@
+.DATA
+
+x 1
+y 4
+z 2
+w 5
+
+.END_DATA
+
+.CODE
+
+MOV A, x
+XCHG B, A
+MOV A, y
+ADD A, B
+XCHG B, A
+MOV A, z
+ADD A, B
+XCHG B, A
+MOV A, w
+XCHG B, A
+SUB A, B
+OUT A
+HLT
+
+
+.END_CODE
