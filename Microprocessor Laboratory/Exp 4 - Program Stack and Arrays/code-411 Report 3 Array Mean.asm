@@ -1,5 +1,3 @@
-; Perform division operation by shifting
-
 CODE    SEGMENT
     ASSUME CS:CODE, DS:CODE
     
