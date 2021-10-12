@@ -1,0 +1,18 @@
+ORG 100H
+
+MOV BX, 2
+MOV CX, 5
+MOV AX, 1
+PUSH BX
+PUSH CX
+
+CALL PERM
+HLT
+RETURN: RET
+PERM PROC
+    
+    LABEL_1:CMP BX, CX
+        JG RETURN
+        MUL BX
+        INC BX
+        JMP LABEL_1
